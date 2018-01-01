@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap4.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Quizzy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="home" class="nav-link" data-toggle="tab" href="">HOME
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="categories" class="nav-link" data-toggle="tab" href="">CATEGORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#">CONTRIBUTE</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right ">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/MDB Free/index.html">LOGOUT</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <h1 id="head" class="h1"></h1>
+    </div>
+    <div id="cat"></div>
+
+
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="js/popper.min.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script>
+    $.get("profile.html", function (data, status) {
+        $("#cat").html(data);
+        $("#head").html("Welcome Alex");
+    })
+
+    $("#categories").click(function () {
+        $.get("cat.html", function (data, status) {
+            $("#cat").html(data);
+            $("#head").html("Categories");
+        })
+    });
+
+    $("#home").click(function () {
+        $.get("profile.html", function (data, status) {
+            $("#cat").html(data);
+            $("#head").html("Welcome Alex");
+        })
+    });
+</script>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- Bootstrap core CSS -->
+  
+  
+  <link href="css/bootstrap4.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  
+  <style>
+    .btn-cust {
+      width: 90%;
+    }
+
+    .jumbotron-title {
+      padding: 0.5em;
+      background: gray;
+    }
+
+    .progress {
+      height: 1vh;
+      width: 90%;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Start your project here-->
+  <!-- Start your project here-->
+  <!--<div style="height: 100vh">
+    <div class="flex-center flex-column">
+        <h1 class="animated fadeIn mb-4">Material Design for Bootstrap</h1>
+
+        <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+
+        <p class="animated fadeIn text-muted">MDB Team</p>
+    </div>
+</div>-->
+  <!-- <div class="jumbotron jumbotron-title jumbotron-fluid text-center">
+    <div class="container">
+      <h1 class="display-3" style="font-size: 2em; color: white">Profile</h1>
+    </div>
+  </div> -->
+  <div class="container">
+    <!--<div class="row">-->
+    <div class="card-deck">
+      <!--<div class="col-4">-->
+      <div class="card card2">
+        <div class="card-block rounded-top bg-success">
+          <h2 class="card-title text-center white-text mt-4">Best Ranks</h2>
+        </div>
+        <div class="col-fluid">
+          <div class="card-body text-center">
+            <p class="card-text btn btn-cust btn-lg btn-outline-danger waves-effect">Leader Rank:Brad</p>
+            <p class="card-text btn btn-cust btn-lg btn-outline-danger waves-effect">Leader Score:800</p>
+            <p class="card-text btn btn-cust btn-lg btn-outline-danger waves-effect">Your Rank:7</p>
+            <button class="btn btn-lg btn-success btn-cust text-center waves-effect">View Leaderboards</button>
+          </div>
+        </div>
+      </div>
+      <!--</div>-->
+      <!--<div class="col-4">-->
+      <div class="card card1">
+        <div class="bg-danger rounded-top">
+          <img class="avatar rounded-circle card-img-top mx-auto d-block m-2 z-depth-2" src="img/pic.jpg" alt="Card image cap" style="height:20vh;width:20vh;border-radius:50%">
+          <div class="card-block">
+            <h2 class="card-title text-center white-text font-bold z-depth-3 bg-success">Alex</h2>
+          </div>
+        </div>
+        <div class="col-fluid">
+          <div class="card-body text-center">
+            <p class="card-text btn btn-cust btn-lg btn-outline-secondary waves-effect">Lvl:Apprentice</p>
+            <div class="progress mb-2">
+              <div class="progress-bar progress-bar-striped bg-success" style="width: 25%;height:1vh"></div>
+            </div>
+            <p class="card-text btn btn-cust btn-lg btn-outline-secondary waves-effect">Score:500</p>
+            <p class="card-text btn btn-cust btn-outline-secondary waves-effect p-3">Best Category:Technology</p>
+          </div>
+        </div>
+      </div>
+      <!--</div>-->
+      <!--<div class="col-4">-->
+      <div class="card card3">
+        <div class="card-block rounded-top bg-success">
+          <h2 class="card-title text-center white-text mt-4">Stats</h2>
+        </div>
+        <div class="col-fluid">
+          <div class="card-body text-center">
+            <canvas id="doughnutChart"></canvas>
+            <button type="button" id="startquiz" class="btn btn-lg btn-success btn-cust waves-effect mt-3">Start Quiz</button>
+          </div>
+        </div>
+      </div>
+      <!--</div>-->
+    </div>
+  </div>
+  </div>
+
+  <!-- /Start your project here-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    //doughnut
+    var ctxD = document.getElementById("doughnutChart").getContext('2d');
+    var myLineChart = new Chart(ctxD, {
+      type: 'doughnut',
+      data: {
+        labels: ["Entertainment", "Sports", "Science", "Technology", "History"],
+        datasets: [{
+          data: [300, 50, 100, 40, 120],
+          backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
+          hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+</body>
+<script>
+ 
+  $("#startquiz").click(function () {
+    $("#cat").load("cat.html");
+    $("#head").html("Categories");
+  });
+
+</script>
+
+</html>
